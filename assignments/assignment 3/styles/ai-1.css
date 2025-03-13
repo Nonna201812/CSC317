@@ -1,0 +1,137 @@
+/*Prompt:
+Generate a complete CSS file 
+Color scheme should be colorful and shiny like a princness
+Typography style: bold and cursive but not too cursive
+Layout preferences: I would like tables and border colors. I would also like a flex box, some containers and some animations. 
+*/
+
+/* General Styles */
+body {
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #4b0082;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    border-bottom: 5px solid #ff66b2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #ff66b2;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    font-family: 'Brush Script MT', cursive;
+    color: #800080;
+}
+
+/* Navigation Bar */
+nav {
+    text-align: center;
+    padding: 10px;
+    background: #ff66b2;
+    border-bottom: 3px solid #800080;
+}
+
+nav ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ol li {
+    display: inline;
+    margin: 10px;
+    font-size: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #4b0082;
+    text-decoration: underline;
+}
+
+/* Main Sections */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #ff66b2;
+    width: 80%;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border: 2px solid #ff66b2;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ff66b2;
+}
+
+th {
+    background: #ff9a9e;
+    color: white;
+}
+
+/* Links */
+a {
+    color: #ff66b2;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #4b0082;
+    text-decoration: underline;
+}
+
+/* Footer */
+p {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    background: #ff66b2;
+    color: white;
+    border-top: 3px solid #800080;
+}
+
+/* Animations */
+@keyframes shine {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+h1:hover, h2:hover, h3:hover {
+    animation: shine 0.5s ease-in-out;
+}

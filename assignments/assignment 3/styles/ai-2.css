@@ -1,0 +1,395 @@
+/* 
+ * Reference image: One Piece logo with Jolly Roger skull wearing Luffy's straw hat
+ * Prompt: I would like some animations, and a flex box, border colors, fonts that match 
+ * with this aesthetic and some tables and containers.
+ * Adapted for Alondra Sanchez-Felix's portfolio HTML
+ */
+
+/* I've adapted the One Piece-themed CSS to match your HTML structure while maintaining the pirate/adventure aesthetic. 
+Here's what I've done:
+Maintained the color palette from the original One Piece theme with blues, yellow, and red accents
+Created specific styling for your header section:
+Added a glowing animation for your avatar image
+Styled your name with a text shadow effect
+Added gradient underlines for section headings
+
+Implemented navigation styling:
+Blue navigation bar with hover effects
+Animated link transitions
+
+Enhanced list styling:
+Used anchor (⚓) icons for list items to match the pirate theme
+Created special styling for your skills list as pill-shaped badges
+
+Created unique styling for your "Connect with me" links:
+Button-style links with 3D press effects
+Hover animations
+
+Styled your sections with:
+Card-like appearance with subtle borders
+Hover effects that lift the sections
+Consistent section headers with yellow underlines
+
+Table styling for your experience section:
+Blue headers that match the theme
+Hover effects for rows
+
+Added the "wanted poster" reveal animation for your header section
+Made everything responsive for mobile viewing */
+
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+  /* Color palette based on One Piece theme */
+  --op-blue: #1a90d0;
+  --op-blue-dark: #0b6ca1;
+  --op-beige: #e8d3a9;
+  --op-red: #d93536;
+  --op-straw-yellow: #f0ca76;
+  --op-bone: #f5f2e8;
+  --op-dark: #2c2820;
+  --op-cloud: #eceeef;
+  
+  /* Shadow variables */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Global styles */
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--op-cloud);
+  color: var(--op-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                    url('https://subtle-patterns.com/patterns/paper.png');
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Staatliches', cursive;
+  color: var(--op-blue);
+  letter-spacing: 1px;
+}
+
+/* Header section styling */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--op-beige);
+  animation: wanted-reveal 1.2s ease-out;
+}
+
+header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--op-blue);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1rem;
+  animation: treasure-shine 3s ease-in-out infinite;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--op-blue);
+  text-shadow: 2px 2px 0 var(--op-beige),
+               4px 4px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  font-size: 1.5rem;
+  color: var(--op-blue-dark);
+  margin-bottom: 2rem;
+}
+
+header h3 {
+  font-size: 1.8rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+header h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--op-blue), var(--op-straw-yellow), var(--op-red));
+  border-radius: 4px;
+}
+
+header p {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Navigation styling */
+nav {
+  background-color: var(--op-blue);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+nav ol {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Lists styling */
+ul, ol {
+  padding-left: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ul li::before {
+  content: "⚓";
+  position: absolute;
+  left: 0;
+  color: var(--op-blue);
+}
+
+/* Links styling */
+a {
+  color: var(--op-blue);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--op-red);
+  text-decoration: underline;
+}
+
+/* Sections styling */
+section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--op-beige);
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+section h3 {
+  border-bottom: 3px solid var(--op-straw-yellow);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+table th {
+  background-color: var(--op-blue);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 1px;
+}
+
+table tr:hover {
+  background-color: rgba(26, 144, 208, 0.1);
+}
+
+table td, table th {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Footer styling */
+p:last-child {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--op-blue);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Skills list special styling */
+main + h3 + ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+main + h3 + ul li {
+  background-color: var(--op-blue);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+main + h3 + ul li:hover {
+  background-color: var(--op-blue-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+main + h3 + ul li::before {
+  display: none;
+}
+
+/* Animation: Bounty poster reveal */
+@keyframes wanted-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-2deg);
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.02) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* Animation: Treasure chest */
+@keyframes treasure-shine {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--op-straw-yellow);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--op-straw-yellow), 0 0 40px rgba(240, 202, 118, 0.5);
+  }
+}
+
+/* Connect with me links */
+h3:nth-of-type(2) + ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+h3:nth-of-type(2) + ul li {
+  padding: 0;
+  margin: 0;
+}
+
+h3:nth-of-type(2) + ul li::before {
+  display: none;
+}
+
+h3:nth-of-type(2) + ul a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--op-blue);
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 0 var(--op-blue-dark);
+  position: relative;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+h3:nth-of-type(2) + ul a:hover {
+  background-color: var(--op-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--op-blue-dark);
+  text-decoration: none;
+}
+
+h3:nth-of-type(2) + ul a:active {
+  top: 4px;
+  box-shadow: 0 0 0 var(--op-blue-dark);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ol {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  h3:nth-of-type(2) + ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}

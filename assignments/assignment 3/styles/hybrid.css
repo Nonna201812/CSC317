@@ -1,0 +1,473 @@
+/* Font imports (from One Piece theme) */
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+/* Font import added for Fennec theme */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  /* One Piece Colors */
+  --op-blue: #1a90d0;
+  --op-blue-dark: #0b6ca1;
+  --op-beige: #e8d3a9;
+  --op-red: #d93536;
+  --op-straw-yellow: #f0ca76;
+  --op-bone: #f5f2e8;
+  --op-dark: #2c2820;
+  --op-cloud: #eceeef;
+  
+  /* Fennec Fox Colors */
+  --fennec-sand: #e8d0a9;
+  --fennec-fur: #d4b483;
+  --fennec-fur-dark: #c19a6b;
+  --fennec-ear-inside: #f9e2c7;
+  --fennec-paw: #a67c52;
+  --fennec-night-sand: #756c5a;
+  --fennec-eye: #592d1d;
+  --fennec-nose: #2e1a0f;
+  --fennec-white: #f7f3ed;
+  --fennec-black: #292420;
+  
+  /* Shadow variables (from One Piece theme) */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+  
+  /* Hybrid Theme Configuration */
+  --primary-color: var(--op-blue);
+  --secondary-color: var(--fennec-fur);
+  --accent-color: var(--op-red);
+  --background-color: var(--op-cloud);
+  --text-color: var(--fennec-black);
+  --heading-color: var(--op-blue-dark);
+  --subheading-color: var(--fennec-eye);
+  --link-color: var(--op-blue);
+  --link-hover-color: var(--fennec-paw);
+  --button-bg: var(--op-blue);
+  --button-hover: var(--fennec-fur-dark);
+  --button-text: var(--fennec-white);
+  --border-color: var(--fennec-fur);
+  --highlight-color: var(--op-straw-yellow);
+  --shadow-color: rgba(41, 36, 32, 0.15);
+}
+
+/* 
+ * Global styles 
+ * Base structure from ai-2.css, typography from styles.css
+ */
+body {
+  /* From the One Piece theme */
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 20px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                    url('https://subtle-patterns.com/patterns/paper.png');
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  /* From Fennec Fox theme from styles.css */
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /* From One Piece theme */
+  color: var(--heading-color);
+  letter-spacing: 1px;
+  
+  /* From Fennec Fox theme */
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  /* From One Piece theme */
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 0 var(--op-beige),
+               4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  /* From Fennec Fox theme */
+  font-size: 1.8rem;
+  color: var(--subheading-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+/* From One Piece theme - gradient underline for h3 */
+h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--op-blue), var(--fennec-fur), var(--op-red));
+  border-radius: 4px;
+}
+
+/* 
+ * Links - Taking styles from both 
+ */
+a {
+  /* From Fennec Fox theme */
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  /* From One Piece theme */
+  font-weight: bold;
+}
+
+a:hover {
+  /* Combined approach */
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+p {
+  /* From Fennec Fox theme */
+  margin: 15px 0;
+  line-height: 1.8;
+}
+
+/* 
+ * Header - Structure from Fennec Fox, animations from One Piece
+ */
+header {
+  /* From Fennec Fox theme */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--fennec-white);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  
+  /* From One Piece theme */
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-color);
+  animation: wanted-reveal 1.2s ease-out;
+}
+
+header img {
+  /* From Fennec Fox theme */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  
+  /* From One Piece theme */
+  border: 4px solid var(--primary-color);
+  box-shadow: var(--shadow-md);
+  animation: treasure-shine 3s ease-in-out infinite;
+}
+
+header p {
+  /* Combined approach */
+  max-width: 800px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+/* 
+ * Navigation - Structure from One Piece, colors from Fennec Fox
+ */
+nav {
+  /* From One Piece theme */
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  
+  /* From Fennec Fox theme */
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+}
+
+nav ol {
+  /* From One Piece theme */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav ol li {
+  margin: 0;
+}
+
+nav ol li a {
+  /* Combined approach */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav ol li a:hover {
+  /* Combined approach */
+  background-color: var(--button-hover);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* 
+ * Lists styling - Anchor icons from One Piece
+ */
+ul, ol {
+  padding-left: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ul li::before {
+  /* From One Piece theme */
+  content: "⚓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* 
+ * Sections styling - Combined approach 
+ */
+section {
+  /* From One Piece theme */
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+  
+  /* From Fennec Fox theme */
+  background-color: var(--fennec-white);
+}
+
+section:hover {
+  /* Combined approach */
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* 
+ * Table styling - Structure from One Piece, colors from Fennec Fox
+ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+table th {
+  /* Combined approach */
+  background-color: var(--primary-color);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 1px;
+}
+
+table tr:hover {
+  background-color: rgba(26, 144, 208, 0.1);
+}
+
+table td, table th {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 
+ * Skills list - Flex display from One Piece, styling from Fennec Fox
+ */
+main + h3 + ul, h3 + ul {
+  /* From One Piece theme */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main + h3 + ul li, h3 + ul li {
+  /* Combined approach */
+  background-color: var(--fennec-white);
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin: 0;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border-color);
+}
+
+main + h3 + ul li:hover, h3 + ul li:hover {
+  /* Combined approach */
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+main + h3 + ul li::before, h3 + ul li::before {
+  display: none;
+}
+
+/* 
+ * Connect with me links - Button styling from One Piece
+ */
+h3:nth-of-type(2) + ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+h3:nth-of-type(2) + ul li {
+  padding: 0;
+  margin: 0;
+}
+
+h3:nth-of-type(2) + ul li::before {
+  display: none;
+}
+
+h3:nth-of-type(2) + ul a {
+  /* From One Piece theme */
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--button-bg);
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 0 var(--button-hover);
+  position: relative;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+h3:nth-of-type(2) + ul a:hover {
+  /* From One Piece theme */
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--button-hover);
+  text-decoration: none;
+}
+
+h3:nth-of-type(2) + ul a:active {
+  /* From One Piece theme */
+  top: 4px;
+  box-shadow: 0 0 0 var(--button-hover);
+}
+
+/* 
+ * Footer styling - From Fennec Fox theme with One Piece colors
+ */
+body > p:last-child {
+  /* From Fennec Fox theme */
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  
+  /* From One Piece theme */
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* 
+ * Animations - From One Piece theme
+ */
+/* Animation: Bounty poster reveal */
+@keyframes wanted-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-2deg);
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.02) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* Animation: Treasure chest */
+@keyframes treasure-shine {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--highlight-color);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--highlight-color), 0 0 40px rgba(240, 202, 118, 0.5);
+  }
+}
+
+/* 
+ * Responsive design - Combined from both themes
+ */
+@media (max-width: 768px) {
+  /* From One Piece theme */
+  nav ol {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  /* From Fennec Fox theme */
+  header p {
+    text-align: left;
+  }
+  
+  h3 + ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* From One Piece theme */
+  h3:nth-of-type(2) + ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
