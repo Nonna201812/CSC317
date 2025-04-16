@@ -2,27 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #0065c9; /* color of the Ocean which is ocean blue  */
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     color: white;
-    background-image: linear-gradient(45deg, #0065c9 0%, #043b72 100%);
 }
 
 .calculator {
     width: 100%;
     max-width: 375px;
-    background-color: #f5d76c; /* Luffy's Straw Hat is the color yellow */
+    background-color: #000;
     overflow: hidden;
-    border-radius: 15px;
-    border: 8px solid #c52018; /* Luffy's red pants*/
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .display {
@@ -33,11 +29,8 @@ body {
     align-items: flex-end;
     justify-content: flex-end;
     font-size: 64px;
-    font-weight: 600;
+    font-weight: 300;
     overflow: hidden;
-    background-color: #043b72; /* Dark blue like the ocean depths */
-    color: white;
-    border-bottom: 4px solid #c52018; /* Luffy's red pants*/
 }
 
 .input-display {
@@ -52,7 +45,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 12px;
     padding: 20px;
-    background-color: #f5d76c; /* Luffy's Straw Hat yellow */
 }
 
 button {
@@ -61,28 +53,25 @@ button {
     height: 80px;
     font-size: 30px;
     cursor: pointer;
-    transition: all 0.2s;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: filter 0.1s;
 }
 
 button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.5);
 }
 
 .utility {
-    background-color: #0090c9; /* Franky blue */
-    color: white;
+    background-color: #a5a5a5;
+    color: #000;
 }
 
 .operation {
-    background-color: #c52018; /* Luffy red pants*/
+    background-color: #ff9f0a;
     color: white;
 }
 
 .number {
-    background-color: #333333; /* Dark like the Black Blade */
+    background-color: #333333;
     color: white;
 }
 
@@ -93,21 +82,10 @@ button.double {
     padding-left: 30px;
 }
 
-#equals {
-    background-color: #1e9b45; /* Zoro green */
-    color: white;
-}
-
-#clear {
-    background-color: #7e3794; /* Robin purple */
-    color: white;
-}
-
 @media (max-width: 500px) {
     .calculator {
         height: 100vh;
         max-width: 100%;
-        border-radius: 0;
     }
     
     .buttons {
