@@ -1,0 +1,1 @@
+I learned a lot of about javascript, node.js, css, and html. I also learned more about how to use mongodb and render. Another thing that I learned more about was group projects and how to commit and push to your main github account. 
